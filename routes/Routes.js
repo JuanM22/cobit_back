@@ -1,8 +1,8 @@
 const ObjectiveRoutes = require('./ObjectiveRoutes');
-const FileRoutes = require('./FileRoutes');
+const FileRoutes = require('./ReportRoutes');
 
 module.exports = function (app) {
 
     app.use('/objective', ObjectiveRoutes);
-    app.use('/file', FileRoutes)
+    app.use('/report', FileRoutes)
 }
