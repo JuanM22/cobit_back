@@ -2,7 +2,7 @@ const Report = require('../model/Report')
 const Domain = require('../model/Domain')
 const Process = require('../model/Process')
 
-const domain1 = [
+const processesDomain1 = [
     new Process('PO1', 'PO1 Definir un Plan Estratégico de TI'),
     new Process('PO2', 'PO2 Definir la Arquitectura de la Información'),
     new Process('PO3', 'PO3 Determinar la Dirección Tecnológica'),
@@ -15,44 +15,48 @@ const domain1 = [
     new Process('PO10', 'PO10 Administrar Proyectos')
 ]
 
-const domain2 = [
-    new Process('AI1', 'AI1 Identificar Soluciones Automatizadas', 2),
-    new Process('AI2', 'AI2 Adquirir Mantener Software Aplicativo', 2),
-    new Process('AI3', 'AI3 Adquirir y Mantener Infraestructura Tecnológica', 2),
-    new Process('AI4', 'AI4 Facilitar la Operación y el Uso', 2),
-    new Process('AI5', 'AI5 Adquirir Recursos de TI', 2),
-    new Process('AI6', 'AI6 Administrar Cambios', 2),
-    new Process('AI7', 'AI7 Instalar y Acreditar Soluciones y Cambios', 2)
-]
+const processesDomain2 =
+    [
+        new Process('AI1', 'AI1 Identificar Soluciones Automatizadas'),
+        new Process('AI2', 'AI2 Adquirir Mantener Software Aplicativo'),
+        new Process('AI3', 'AI3 Adquirir y Mantener Infraestructura Tecnológica'),
+        new Process('AI4', 'AI4 Facilitar la Operación y el Uso'),
+        new Process('AI5', 'AI5 Adquirir Recursos de TI'),
+        new Process('AI6', 'AI6 Administrar Cambios'),
+        new Process('AI7', 'AI7 Instalar y Acreditar Soluciones y Cambios')
+    ]
 
-const domain3 = [
-    new Process('DS1', 'DS1 Definir y Administrar los Niveles de Servicio', 3),
-    new Process('DS2', 'DS2 Administrar los Servicios a Terceros', 3),
-    new Process('DS3', 'DS3 Administrar el Desempeño y la Capacidad', 3),
-    new Process('DS4', 'DS4 Garantizar la Continuidad del Servicio', 3),
-    new Process('DS5', 'DS5 Garantizar la Seguridad de los Sistemas', 3),
-    new Process('DS6', 'DS6 Identificar y Asignar Costos', 3),
-    new Process('DS7', 'DS7 Educar y Entrenar a los Usuarios', 3),
-    new Process('DS8', 'DS8 Administrar la mesa de Servicio y los Incidentes', 3),
-    new Process('DS9', 'DS9 Administrar la Configuración', 3),
-    new Process('DS10', 'DS10 Administrar los Problemas', 3),
-    new Process('DS11', 'DS11 Administrar los Datos', 3),
-    new Process('DS12', 'DS12 Administrar el Ambiente Físico', 3),
-    new Process('DS13', 'DS13 Administras las Operaciones', 3)
-]
+const processesDomain3 =
+    [
 
-const domain4 = [
-    new Process('ME1', 'ME1 Monitorear y Evaluar el Desempeño de TI', 4),
-    new Process('ME2', 'ME2 Monitorear y Evaluar el Control Interno', 4),
-    new Process('ME3', 'ME3 Garantizar el Cumplimiento Regulatorio', 4),
-    new Process('ME4', 'ME4 Proporcionar Gobierno de TI', 4)
-]
+        new Process('DS1', 'DS1 Definir y Administrar los Niveles de Servicio'),
+        new Process('DS2', 'DS2 Administrar los Servicios a Terceros'),
+        new Process('DS3', 'DS3 Administrar el Desempeño y la Capacidad'),
+        new Process('DS4', 'DS4 Garantizar la Continuidad del Servicio'),
+        new Process('DS5', 'DS5 Garantizar la Seguridad de los Sistemas'),
+        new Process('DS6', 'DS6 Identificar y Asignar Costos'),
+        new Process('DS7', 'DS7 Educar y Entrenar a los Usuarios'),
+        new Process('DS8', 'DS8 Administrar la mesa de Servicio y los Incidentes'),
+        new Process('DS9', 'DS9 Administrar la Configuración'),
+        new Process('DS10', 'DS10 Administrar los Problemas'),
+        new Process('DS11', 'DS11 Administrar los Datos'),
+        new Process('DS12', 'DS12 Administrar el Ambiente Físico'),
+        new Process('DS13', 'DS13 Administras las Operaciones')
+    ]
+
+const processesDomain4 =
+    [
+        new Process('ME1', 'ME1 Monitorear y Evaluar el Desempeño de TI'),
+        new Process('ME2', 'ME2 Monitorear y Evaluar el Control Interno'),
+        new Process('ME3', 'ME3 Garantizar el Cumplimiento Regulatorio'),
+        new Process('ME4', 'ME4 Proporcionar Gobierno de TI')
+    ]
 
 const domains = [
-    new Domain(1, domain1),
-    new Domain(2, domain2),
-    new Domain(3, domain3),
-    new Domain(4, domain4)
+    new Domain(1, 'Planear y Organizar', processesDomain1),
+    new Domain(2, 'Adquirir e Implementar', processesDomain2),
+    new Domain(3, 'Entregar y Dar Soporte', processesDomain3),
+    new Domain(4, 'Monitorear y Evaluar', processesDomain4),
 ]
 
 const ReportController = {}
@@ -63,7 +67,7 @@ function createReport(report) {
         bussiness_name: report.bussiness_name,
         auditor_name: report.auditor_name,
         bussiness_assets: [],
-        processes: []
+        domains: []
     })
 }
 

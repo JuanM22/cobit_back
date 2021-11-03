@@ -1,12 +1,12 @@
-const Process = require("./Process");
-
 class Domain {
 
     id = 0;
+    name = '';
     processes = [];
 
-    constructor (id, processes){
+    constructor (id, name, processes){
         this.id = id
+        this.name = name
         this.processes = processes
     }
 

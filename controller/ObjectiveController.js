@@ -16,7 +16,7 @@ async function saveObjective(objective) {
 
 async function updateObjective(objective) {
     const response = await Objective.updateOne({ objectiveId: objective.objectiveId }, { $set: { questions: objective.questions } });
-    return (response.modifiedCount === 1) ? 'Datos actualizados correctamente' : 'Error al actualizar la pregunta';
+    return (response.modifiedCount === 1) ? 'success' : 'error';
 }
 
 async function lastObjectiveId() {
